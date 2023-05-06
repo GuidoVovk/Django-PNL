@@ -1,0 +1,38 @@
+
+
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block 'title' %} Entidades-resultado {% endblock %}
+
+
+{% block 'content' %}
+    <a href="{% url 'index' %}" class="btn btn-outline-dark m-2">Atrás</a>
+    <div class="container-fluid d-flex justify-content-center p-3 m-3">
+    <div class="entidades">
+        <h3 class="mb-3 pb-2 border-bottom border-secondary">Entidades encontradas:</h3>
+        {% if entidades %}
+        <table>
+            <thead>
+              <tr>
+                <th>Entidad</th>
+                <th>Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for entidad in entidades %}
+              <tr>
+                <td>{{ entidad.0 }}</td>
+                <td>{{ entidad.1 }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+            <p>No se encontraron entidades en el documento.</p>
+        {% endif %}
+    </div>   
+    </div>
+
+{% endblock %}

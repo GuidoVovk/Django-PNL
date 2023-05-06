@@ -1,0 +1,19 @@
+{% extends 'layout/base.html' %}
+
+{% block 'title' %}Inicio{% endblock %}
+
+{% block 'content' %}
+
+    <div class="d-flex flex-column align-items-center p-3">
+        <div class="card text-white bg-primary p-3" style="max-width: 50rem;">
+            <h5>Generar una nube de palabras a partir de un PDF o un texto obtenido de una URL.</h5>
+            <div class="card-body text-center">
+                <a href="{% url 'resumen' %}" class=""><button class="btn btn-outline-light m-1 py-3">NUBE DE PALABRAS</button></a>  
+                <!--<a href="{% url 'text' %}" class="mt-3"><button class="btn btn-outline-light mb-3 py-3 mx-3">RESUMEN DE TEXTO</button></a> 
+                <a href="{% url 'entity' %}" class="mt-3"><button class="btn btn-outline-light me-3 py-3 px-4">ENTIDADES</button></a> !-->
+            </div>
+       
+            
+    </div>
+    
+{% endblock %}

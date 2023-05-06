@@ -1,0 +1,20 @@
+{% extends 'layout/base.html' %}
+
+
+{% block 'title' %} Resumen-text {% endblock %}
+
+{% block 'content' %}
+<a href="{% url 'index' %}" class="btn btn-outline-dark m-2">Atrás</a>
+<div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+    <form method="POST" enctype="multipart/form-data" class="form flex-column rounded border border-primary p-3 text-center">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="mt-auto text-center">
+            <button type="submit" class="btn btn-outline-success fw-bold">Resumen de texto</button>
+        </div>
+    </form>
+</div>
+
+
+ 
+{% endblock %}

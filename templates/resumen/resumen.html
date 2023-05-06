@@ -1,0 +1,29 @@
+{% extends 'layout/base.html' %}
+
+
+{% block 'title' %} Resumen {% endblock %}
+
+{% block 'content' %}
+
+<a href="{% url 'index' %}" class="btn btn-outline-dark m-2">Atrás</a>
+<div class="d-flex flex-column justify-content-center align-items-center" style="height: 300px;">
+    <h5 class="mb-3">Seleccione un archivo en PDF o copie una URL</h5>
+    <form method="post" enctype="multipart/form-data" class="form rounded border border-primary p-3">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <label for="{{ form.file_path.id_for_label }}" class="form-label">PDF:</label>
+            {{ form.file_path }}
+        </div>
+        <div class="form-group mb-3">
+            <label for="{{ form.url.id_for_label }}" class="form-label">URL:</label>
+            {{ form.url }}
+        </div>
+        <div class="mt-auto text-center">
+            <button type="submit" class="btn btn-outline-primary fw-bold">Nube de Palabras</button>
+        </div>
+    </form>
+    
+</div>
+
+ 
+{% endblock %}
